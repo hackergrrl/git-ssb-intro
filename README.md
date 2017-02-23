@@ -37,10 +37,11 @@ see that user (or any user that follows that user too) online, you can retrieve
 their latest log entries from them. all without any central server or central
 authentication.
 
-git-ssb builds on top of this: things like commits, branches, issues, and pull
-requests are modeled as log entries on each participant's personal log, while
-the gossip protocol runs in the background and propagates new content to
-everyone involved in the git repository.
+[git-ssb](http://gitmx.com/%25n92DiQh7ietE%2BR%2BX%2FI403LQoyf2DtR3WQfCkDKlheQU%3D.sha256)
+builds on top of this: things like commits, branches, issues, and pull requests
+are modeled as log entries on each participant's personal log, while the gossip
+protocol runs in the background and propagates new content to everyone involved
+in the git repository.
 
 
 ## installing scuttlebot
@@ -59,7 +60,8 @@ them.
 
 ## installing git-ssb
 
-git-ssb is primarily the work of
+[git-ssb](http://gitmx.com/%25n92DiQh7ietE%2BR%2BX%2FI403LQoyf2DtR3WQfCkDKlheQU%3D.sha256)
+is primarily the work of
 [cel](http://gitmx.com/%40f%2F6sQ6d2CMxRUhLpspgGIulDxDCwYD7DzFzPNr7u5AU%3D.ed25519),
 and comes in the form of a command-line program not unlike `git` or github's
 [hub](https://github.com/github/hub).
@@ -131,4 +133,116 @@ and can browse it like you might've on github.
 
 ## collaboration: forks and pull requests
 
+if you're reading this article, then you've already found one ssb git
+repository: this one! let's create a fork, make some changes, and send a pull
+request:
+
+### clone
+
+```
+$ cd /tmp
+
+$ git clone ssb://%RPKzL382v2fAia5HuDNHD5kkFdlP7bGvXQApSXqOBwc=.sha256 git-ssb-intro
+
+$ cd git-ssb-intro
+```
+
+### fork
+
+let's look at the help for `git-ssb fork`:
+
+```
+Usage: git ssb fork [<upstream>] <remote_name>
+
+  Create a new git-ssb repo as a fork of another repo
+  and add it as a git remote
+
+Arguments:
+  upstream      id, url, or git remote name of the repo to fork.
+                default: 'origin' or 'ssb'
+  remote_name   Name for the new remote
+```
+
+since we just did a fresh git clone, the remote to the original repo is
+`origin`; you can type `git remote -v` and have a look. since `origin` (or
+`ssb`) are the default for forks, you can omit this option.
+
+`remote_name` is whatever you'd like to call the remote of your fork. I usually
+call mine `noffle-ssb`, to indicate that it's a fork remote and that it's my
+personal one:
+
+```
+$ git-ssb fork noffle-ssb
+Created repo: ssb://%DKWLuN05qtwjdwTG7zCG4aU12muBK2pkpYgaBbeVkTM=.sha256 (git-ssb-intro)
+Added remote: noffle-ssb
+```
+
+great! now we can make some changes and commit them. I forgot to add a license
+to this document, so we can add that, commit, and push:
+
+```
+$ cat >> README.md
+
+# license
+
+ISC
+^D
+
+$ git commit -am 'adds license'
+[master 3a7c5f7] adds license
+ 1 file changed, 4 insertions(+)
+
+$ git push noffle-ssb
+Counting objects: 3, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 2.55 KiB | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+Decoding objects: 100% (3/3)
+Pushing blobs...pwMeF/zIvuwFc4/T3VBwpHr+r6H+dHvWKFyIxCs1+08=.sha256
+Published %i0Fcr3zRdf50Tin1UdEmYU38eKWthmkO3XgpfMYU1AU=.sha256ha256
+To ssb://%DKWLuN05qtwjdwTG7zCG4aU12muBK2pkpYgaBbeVkTM=.sha256
+   6a701c2..3a7c5f7  master -> master
+```
+
+we can see our fork on the web interface, too! navigate to
+`http://localhost:7718` and you'll see your repo fork.
+
+let's finally create a pull request with our changes:
+
+```
+$ git-ssb pull-request
+```
+
+this will launch your text editor and let you type in a message. it's good
+practice to make the first line of your message the subject, and leave two
+newlines before writing your message. something like
+
+```
+test pull request
+
+please merge me
+```
+
+sure enough, you can now navigate to the `from-github-to-git-ssb` repo on ssb
+and see your pull request:
+http://localhost:7718/%25RPKzL382v2fAia5HuDNHD5kkFdlP7bGvXQApSXqOBwc%3D.sha256/pulls
+
+if you were the owner of the git repo, you could merge this pull request from
+the command line by pulling down the fork remote and merging:
+
+```
+git fetch ssb://%RPKzL382v2fAia5HuDNHD5kkFdlP7bGvXQApSXqOBwc=.sha256 noffle-ssb
+git merge noffle-ssb
+git push ssb
+```
+
+## go forth and collaborate
+
+well done, and welcome to the scuttleverse and the world of distributed social
+coding! share git-ssb with your friends, and consider managing an ssb remote of
+your github work, to encourage further growth of the distributed web.
+
+thanks for reading! please share feedback or questions as issues on this repo,
+or, if you find any errors in the text, send a pull request.
 
