@@ -1,3 +1,8 @@
+Read this on SSB for best results:
+http://git-ssb.celehner.com/%25RPKzL382v2fAia5HuDNHD5kkFdlP7bGvXQApSXqOBwc%3D.sha256
+
+---
+
 # From GitHub to git-ssb
 ### A guide to hacking *together* on the distributed web
 
