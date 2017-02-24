@@ -42,7 +42,7 @@ authentication.
 
 [git-ssb](http://gitmx.com/%25n92DiQh7ietE%2BR%2BX%2FI403LQoyf2DtR3WQfCkDKlheQU%3D.sha256)
 builds on top of this: things like commits, branches, issues, and pull requests
-are modeled as log entries on each participant's personal log, while the gossip
+are encoded into log entries on each participant's personal log, while the gossip
 protocol runs in the background and propagates new content to everyone involved
 in the git repository.
 
@@ -95,8 +95,9 @@ issues and pull requests. All without a centralized authority.
 There are at least a few public git-ssb web servers run by the community, for
 browsing git-ssb content without running your own scuttlebot:
 - http://gitmx.com
-- http://ssb.celehner.com
 - http://git.mixmix.io
+- https://git.scuttlebot.io
+- https://git-ssb.celehner.com
 
 
 ## Creating your first SSB git remote
@@ -105,7 +106,7 @@ git-ssb makes scuttlebot act like a git remote. Navigate to an existing git
 repository of yours and run
 
 ```
-$ git-ssb create ssb
+$ git-ssb create ssb my-little-repo
 ```
 
 This will create a new git repo on SSB. The command will output something that
@@ -235,7 +236,7 @@ If you were the owner of the git repo, you could merge this pull request from
 the command line by pulling down the fork remote and merging:
 
 ```
-git fetch ssb://%RPKzL382v2fAia5HuDNHD5kkFdlP7bGvXQApSXqOBwc=.sha256 noffle-ssb
+git fetch ssb://%RPKzL382v2fAia5HuDNHD5kkFdlP7bGvXQApSXqOBwc=.sha256 noffle-ssb:noffle-ssb
 git merge noffle-ssb
 git push ssb
 ```
