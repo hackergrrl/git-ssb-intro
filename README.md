@@ -61,9 +61,9 @@ instructions](https://ssbc.github.io/patchwork/) to install Patchwork, a nice
 front-end that also packages a Scuttlebot server. This involves getting an
 "invite" to the scuttlebot network. This isn't a strict requirement, but an
 invite means you'll have other peers willing to share your log around the
-network, which is necessary for git-ssb to be useful. Stop by #ssb on Freenode
-via IRC and ask for an invite -- there are many folks who are happy to provide
-them.
+network, which is necessary for git-ssb to be useful. Stop by #scuttlebutt on
+Freenode via IRC and ask for an invite -- there are many folks who are happy to
+provide them.
 
 
 ## Installing git-ssb
