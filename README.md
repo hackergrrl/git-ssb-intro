@@ -65,6 +65,14 @@ network, which is necessary for git-ssb to be useful. Stop by #scuttlebutt on
 Freenode via IRC and ask for an invite -- there are many folks who are happy to
 provide them.
 
+If nobody on IRC is around or you'd like to just get going to the good part,
+here is an invite code that'll work for the first 15 users who follow this
+exercise:
+
+```
+"eight45.net:8008:@eM4e8pmRiZpeCBitqp6vq3lT8EwC5UjjKuajHbpWnNI=.ed25519~MinujCg1TdH4qxy/+qWYrw9vT/VCi1IcsbVNJpUqdc0="
+```
+
 
 ## Installing git-ssb
 
