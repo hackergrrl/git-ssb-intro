@@ -315,3 +315,8 @@ your GitHub work, to encourage further growth of the distributed web.
 Thanks for reading! please share feedback or questions as issues on this repo,
 or, if you find any errors in the text, send a pull request.
 
+# Contributors
+
+- @noffle: wrote this doc
+- @cel: answered my many questions, and wrote most of the section on "push
+  conflicts"
