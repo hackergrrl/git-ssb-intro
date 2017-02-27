@@ -254,6 +254,58 @@ git merge noffle-ssb
 git push ssb
 ```
 
+## Alternative: collaboration without forks
+
+git-ssb's permissionless model has an interesting consequence: *anybody can push
+to anybody else's git repository*. Coming from a GitHub background this probably
+sounds like madness, but folks on SSB have been using this model with good
+success. A pull request might look like this:
+
+```
+$ git clone ssb://%RPKzL382v2fAia5HuDNHD5kkFdlP7bGvXQApSXqOBwc=.sha256 foobar
+
+$ git checkout -b @noffle/master
+
+$ cd foobar
+
+$ vim index.js
+(edit edit edit)
+
+$ git commit -am 'wark'
+
+$ git push ssb
+
+$ git ssb pull-request
+```
+
+The nomenclature is to treat the `ssb` remote as the "true" remote, and work off
+of a branch called `@your-username/master` as your own master, emulating a
+forked repo. This seems to work well: the SSB network thrives off of being a
+group of kind, respectful folks who don't push to each other's `master` branch.
+:)
+
+## Push conflicts
+
+Since git-ssb allows users to push to the same remote asynchronously, there is a
+possibility that they will conflict. This is different from a git merge
+conflict: in this case, there are two (or more) competing HEADs for e.g.
+`master`.
+
+If this happens, git-ssb will consider the branch as being in a conflict state.
+It will automatically add a new "conflict branch" for each conflicting HEAD. The
+name of each conflict branch will be prefixed by its SSB message ID. To resolve
+the conflict, one should merge the conflict branches locally as appropriate, and
+then push the new head and delete the conflict branches. e.g.:
+
+```
+git checkout master
+git fetch origin
+git merge origin/%msg1/master [origin/%msg2/master...]
+# resolve merge conflict
+...
+git push origin master -d %msg1/master [-d %msg2/master...]
+```
+
 ## Go forth and collaborate!
 
 Well done, and welcome to the scuttleverse and the world of distributed social
