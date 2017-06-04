@@ -24,8 +24,8 @@ knowledge of GitHub. It will walk through:
 ## What is SSB?
 
 SSB stands for [secure scuttlebutt](https://github.com/ssbc/secure-scuttlebutt)
-the protocol that powers the *peer-to-peer log store*,
-[scuttlebot](http://scuttlebot.io). There is a great deal of information to be
+the database/ protocol that powers the *peer-to-peer log store*,
+[scuttlebutt](http://scuttlebot.io). There is a great deal of information to be
 found by reading these sites, if you're so inclined.
 
 If you're familiar with bitcoin or blockchains, SSB is kind of like having your
@@ -54,19 +54,16 @@ in the git repository.
 
 ## Installing scuttlebot
 
-First you'll need to install [node and npm](https://nodejs.org).
+First you'll need to install [node and npm](https://nodejs.org), try [nvm](https://github.com/creationix/nvm) for it's ease and elegance.
 
-Once you've done that, follow [these
-instructions](https://ssbc.github.io/patchwork/) to install Patchwork, a nice
+Once you've done that, follow the [
+instructions here](https://www.scuttlebutt.nz/) to install Patchwork, a nice
 front-end that also packages a Scuttlebot server. This involves getting an
 "invite" to the scuttlebot network. This isn't a strict requirement, but an
 invite means you'll have other peers willing to share your log around the
-network, which is necessary for git-ssb to be useful. Stop by #scuttlebutt on
-Freenode via IRC and ask for an invite -- there are many folks who are happy to
-provide them.
+network, which is necessary for git-ssb to be useful. Check the list of pubs with [open invites](https://github.com/ssbc/scuttlebot/wiki/Pub-Servers), or stop by #scuttlebutt on Freenode via IRC.
 
-If nobody on IRC is around or you'd like to just get going to the good part,
-here is an invite code that'll work for the first 15 users who follow this
+Here is an invite code that'll work for the first 15 users who follow this
 exercise:
 
 ```
@@ -89,14 +86,16 @@ $ npm install --global git-ssb
 ```
 
 You can run `git-ssb` (or `git ssb`) from the command line now and get a feel
-for the sorts of things it can do
+for the sorts of things it can do.
+
+**NOTE** - Make sure you are running a scuttlebot server when executing git-ssb commands. You can run one standalone, but the simplest way is to just run Patchwork.
 
 
 ## The git-ssb web interface
 
 If you've already joined the SSB network successfully, you can take a look at
 what other hackers on SSB are working on! Run `git-ssb web` and point your web
-browser at the URL it outputs.
+browser at the URL it outputs. (Remember you need to be running scuttlebot or Patchwork.)
 
 ![git-ssb web screenshot](http://gitmx.com/%25q5d5Du%2B9WkaSdjc8aJPZm%2BjMrqgo0tmfR%2BRcX5ZZ6H4%3D.sha256/raw/b3fa523aaaf02c61131da1d45a8f1b1174e4ef5e/static/screenshot-user-activity.png)
 
@@ -107,10 +106,11 @@ issues and pull requests. All without a centralized authority.
 
 There are at least a few public git-ssb web servers run by the community, for
 browsing git-ssb content without running your own scuttlebot:
-- http://gitmx.com
-- http://git.mixmix.io
+
 - https://git.scuttlebot.io
+- http://gitmx.com
 - https://git-ssb.celehner.com
+- http://git.mixmix.io
 
 
 ## Creating your first SSB git remote
@@ -132,15 +132,13 @@ Created repo: ssb://%DEvlJYD+zuudMyNWFBjiiNvZ8DbOyBYhCkE5EVtWSV0=.sha256
 
 The string `%DEvlJYD+zuudMyNWFBjiiNvZ8DbOyBYhCkE5EVtWSV0=.sha256` is a hash that
 uniquely identifies your git-ssb repository. To see this in action, you can
-navigate to `/tmp` and run
+navigate to (for example) `~/projects` and run
 
 ```
-$ cd /tmp
-
 $ git clone ssb://%DEvlJYD+zuudMyNWFBjiiNvZ8DbOyBYhCkE5EVtWSV0=.sha256 my-repo
 ```
 
-and you'll see that `/tmp/my-repo` now exists. git-ssb talked to your local
+and you'll see that `~/projects/my-repo` now exists. git-ssb talked to your local
 scuttlebot server and pulled down the entire git repository.
 
 In fact, you can also view your handiwork by running `git-ssb web` and opening
@@ -157,8 +155,6 @@ request:
 ### Clone
 
 ```
-$ cd /tmp
-
 $ git clone ssb://%RPKzL382v2fAia5HuDNHD5kkFdlP7bGvXQApSXqOBwc=.sha256 git-ssb-intro
 
 $ cd git-ssb-intro
@@ -166,7 +162,7 @@ $ cd git-ssb-intro
 
 ### Fork
 
-Let's look at the help for `git-ssb fork`:
+Let's look check out the help `git-ssb fork --help`:
 
 ```
 Usage: git ssb fork [<upstream>] <remote_name>
