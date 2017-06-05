@@ -20,6 +20,9 @@ knowledge of GitHub. It will walk through:
 4. a walkthrough of using git-ssb to do common GitHub workflows (creating repos,
    making pull requests, merging pull requests, issues, etc).
 
+![git-ssb web activity](git_ssb_activity.png)
+
+_A view of recent activity among my friends on git-ssb_
 
 ## What is SSB?
 
@@ -97,7 +100,10 @@ If you've already joined the SSB network successfully, you can take a look at
 what other hackers on SSB are working on! Run `git-ssb web` and point your web
 browser at the URL it outputs. (Remember you need to be running scuttlebot or Patchwork.)
 
-![git-ssb web screenshot](http://gitmx.com/%25q5d5Du%2B9WkaSdjc8aJPZm%2BjMrqgo0tmfR%2BRcX5ZZ6H4%3D.sha256/raw/b3fa523aaaf02c61131da1d45a8f1b1174e4ef5e/static/screenshot-user-activity.png)
+
+![git-ssb web repo](git_ssb_repo.png)
+
+_A repo on git-ssb_
 
 You'll see that it's not dissimilar from GitHub:
 [git-ssb-web](http://gitmx.com/%25q5d5Du%2B9WkaSdjc8aJPZm%2BjMrqgo0tmfR%2BRcX5ZZ6H4%3D.sha256)
