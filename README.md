@@ -89,7 +89,7 @@ Let's use `npm` to install `git-ssb` globally so we can use it in the command-li
 $ npm install --global git-ssb
 ```
 
-You can now run `git-ssb` (or `git ssb`) from the command line now and get a feel for the sorts of things it can do.
+You can now run `git-ssb` (or `git ssb`) from the command line and get a feel for the sorts of things it can do.
 
 **NOTE** - You need to make sure you are running a scuttlebot server when executing git-ssb commands. You can run one standalone, but the simplest way is to just run Patchwork.
 
@@ -167,7 +167,7 @@ $ cd git-ssb-intro
 
 ### Fork
 
-Let's look check out the help `git-ssb fork --help`:
+Let's look at the help with `git-ssb fork --help`:
 
 ```
 Usage: git ssb fork [<upstream>] <remote_name>
