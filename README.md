@@ -322,3 +322,7 @@ or, if you find any errors in the text, send a pull request.
 - @cel: answered my many questions, and wrote most of the section on "push
   conflicts"
 - @mixmix: several clarifications and improvements
+
+# License
+
+CC0
