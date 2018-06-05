@@ -75,6 +75,17 @@ _Patchwork - runs your replication server for you_
 
 Patchwork is incedentally the best place to find and talk with the people building ssb and git-ssb - it's an active and welcoming community who are happy to answer any questions you have.
 
+### 3. Install required plugins
+
+These are scuttlebutt modules required for git-ssb to function. With `sbot
+server` running, run
+
+```
+$ sbot plugins.install ssb-private
+```
+
+and restart sbot.
+
 ### 3. Install git-ssb
 
 [git-ssb](http://gitmx.com/%25n92DiQh7ietE%2BR%2BX%2FI403LQoyf2DtR3WQfCkDKlheQU%3D.sha256)
