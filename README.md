@@ -48,7 +48,7 @@ see that user (or any user that follows that user too) online, you can retrieve
 their latest log entries from them. All without any central server or central
 authentication.
 
-[git-ssb](http://gitmx.com/%25n92DiQh7ietE%2BR%2BX%2FI403LQoyf2DtR3WQfCkDKlheQU%3D.sha256)
+[git-ssb](http://git.scuttlebot.io/%25n92DiQh7ietE%2BR%2BX%2FI403LQoyf2DtR3WQfCkDKlheQU%3D.sha256)
 builds on top of this: things like commits, branches, issues, and pull requests
 are encoded into log entries on each participant's personal log, while the gossip
 protocol runs in the background and propagates new content to everyone involved
@@ -88,9 +88,9 @@ and restart sbot.
 
 ### 3. Install git-ssb
 
-[git-ssb](http://gitmx.com/%25n92DiQh7ietE%2BR%2BX%2FI403LQoyf2DtR3WQfCkDKlheQU%3D.sha256)
+[git-ssb](http://git.scuttlebot.io/%25n92DiQh7ietE%2BR%2BX%2FI403LQoyf2DtR3WQfCkDKlheQU%3D.sha256)
 is primarily the work of
-[cel](http://gitmx.com/%40f%2F6sQ6d2CMxRUhLpspgGIulDxDCwYD7DzFzPNr7u5AU%3D.ed25519),
+[cel](http://git.scuttlebot.io/%40f%2F6sQ6d2CMxRUhLpspgGIulDxDCwYD7DzFzPNr7u5AU%3D.ed25519),
 and comes in the form of a command-line program not unlike `git` or GitHub's
 [hub](https://github.com/github/hub).
 
@@ -116,7 +116,7 @@ browser at the URL it outputs. (Remember you need to be running scuttlebot or Pa
 _A repo on git-ssb_
 
 You'll see that it's not dissimilar from GitHub:
-[git-ssb-web](http://gitmx.com/%25q5d5Du%2B9WkaSdjc8aJPZm%2BjMrqgo0tmfR%2BRcX5ZZ6H4%3D.sha256)
+[git-ssb-web](http://git.scuttlebot.io/%25q5d5Du%2B9WkaSdjc8aJPZm%2BjMrqgo0tmfR%2BRcX5ZZ6H4%3D.sha256)
 lets you see commit activity, view repositories, browse commit history, see
 issues and pull requests. All without a centralized authority.
 
@@ -124,10 +124,6 @@ There are at least a few public git-ssb web servers run by the community, for
 browsing git-ssb content without running your own scuttlebot:
 
 - https://git.scuttlebot.io
-- http://gitmx.com
-- https://git-ssb.celehner.com
-- http://git.mixmix.io
-
 
 ## Creating your first SSB git remote
 
