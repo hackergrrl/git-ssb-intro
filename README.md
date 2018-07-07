@@ -26,12 +26,12 @@ _A view of recent activity among my friends on git-ssb_
 
 ## What is SSB?
 
-SSB stands for [secure scuttlebutt](https://github.com/ssbc/secure-scuttlebutt)
-the database/ protocol that powers the *peer-to-peer log store*,
+SSB stands for [secure scuttlebutt](https://github.com/ssbc/secure-scuttlebutt),
+the database/protocol that powers the *peer-to-peer log store*
 [scuttlebutt](http://scuttlebot.io). There is a great deal of information to be
 found by reading these sites, if you're so inclined.
 
-If you're familiar with bitcoin or blockchains, SSB is kind of like having your
+If you're familiar with bitcoin or blockchains, SSB is akin to having your
 own personal blockchain: you can append messages of any kind, with any data
 you'd like. Unlike bitcoin, there's no money involved: it's just a data
 structure on your local machine.
@@ -39,7 +39,7 @@ structure on your local machine.
 Your personal log can only be appended to, and is cryptographically secure: each
 message references the hash of the message that came before it. The whole thing
 is then also signed by your public key, making it both tamper-proof, and
-appendable only to the private key holder (you).
+appendable only by the private key holder (you).
 
 The final piece of SSB that makes it all work is the gossip protocol: when you
 run scuttlebot, you become a peer in a network of other scuttlebot users. You
