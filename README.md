@@ -1,6 +1,6 @@
 # git-ssb-intro
 
-## A guide to hacking *together* on the distributed web
+> a guide to hacking *together* on the distributed web
 
 If you're curious about the distributed web, and the prospect of using git
 collaboratively without a central, closed-source point of origin, you came to
@@ -94,8 +94,15 @@ and restart `sbot server`.
 All of the dependencies for git-ssb *and git-ssb itself* live on the SSB
 network. To access them, we'll need to install [ssb-npm](http://git.scuttlebot.io/%25iqhz%2FsQCZCSp91JYAqfQPzHuDYrjw1geKPf1wJ1CvlA%3D.sha256):
 
-1. Install the ssb-npm-registry plugin: `sbot plugins.install ssb-npm-registry --from 'http://localhost:8989/blobs/get/&mQWE3Ziulf3hJ4ncGRnqQeDeokeKhQjNcCPQRLEcIho=.sha256'`
-2. Install the ssb-npm command: `npm install --registry=http://localhost:8043/ --g ssb-npm`
+First, install the ssb-npm-registry plugin:
+
+```
+sbot plugins.install ssb-npm-registry --from 'http://localhost:8989/blobs/get/&mQWE3Ziulf3hJ4ncGRnqQeDeokeKhQjNcCPQRLEcIho=.sha256'
+```
+then install the ssb-npm command:
+```
+npm install --registry=http://localhost:8043/ -g ssb-npm
+```
 
 ### 4. Install git-ssb
 
