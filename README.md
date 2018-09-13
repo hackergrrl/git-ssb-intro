@@ -56,21 +56,22 @@ You can install node and npm..
 1. from https://nodejs.org, or
 1. using [nvm](https://github.com/creationix/nvm)
 
-### 2. Install scuttlebot
-
-The [scuttlebot](http://www.github.com/SSBC/scuttlebot) (or sbot) is an ssb server which will manage replicating data with other peers. The easiest way to get set up is to [install Patchwork](https://www.scuttlebutt.nz/), it runs an sbot for you, and is an interface into the social side of data replicated on ssb. 
-
-**NOTE** - Make sure you [get an invite code](https://github.com/ssbc/scuttlebot/wiki/Pub-Servers) from a pub to increase your ability to find other scuttlers.
+### 2a. Install Patchwork
 
 ![Patchwork](patchwork.jpg)
 
-_Patchwork - runs a scuttlebot node for you_
+Patchwork is an easy and user-friendly client that's nice to start your SSB
+experience with, if you're new. Follow the instructions on the main page at https://scuttlebutt.nz
 
-Patchwork is incedentally the best place to find and talk with the people building ssb and git-ssb - it's an active and welcoming community who are happy to answer any questions you have.
+If you'd rather not use Patchwork, follow the next section.
 
-### 3. Install required plugins
+### 2b. Install scuttlebot + plugins
 
-These are scuttlebutt modules required for git-ssb to function. With `sbot
+The [scuttlebot](http://www.github.com/SSBC/scuttlebot) (or sbot) is an ssb server which will manage replicating data with other peers.
+
+Make sure you [get an invite code](https://github.com/ssbc/scuttlebot/wiki/Pub-Servers) from a pub to increase your ability to find other scuttlers.
+
+You'll also need to install some plugins for git-ssb to function. With `sbot
 server` running, run
 
 ```
