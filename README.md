@@ -86,6 +86,8 @@ then install the ssb-npm command:
 ```
 npm install --registry=http://localhost:8043/ -g ssb-npm
 ```
+If you have problems with the above commands you may need to follow different people, so 
+that you can find all the dependencies. [cel](http://git.scuttlebot.io/%40f%2F6sQ6d2CMxRUhLpspgGIulDxDCwYD7DzFzPNr7u5AU%3D.ed25519) is a good bet. 
 
 ### 4. Install git-ssb
 
