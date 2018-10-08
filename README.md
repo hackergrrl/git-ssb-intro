@@ -80,7 +80,7 @@ network. To access them, we'll need to install [ssb-npm](http://git.scuttlebot.i
 First, install the ssb-npm-registry plugin:
 
 ```
-sbot plugins.install ssb-npm-registry --from 'http://localhost:8989/blobs/get/&mQWE3Ziulf3hJ4ncGRnqQeDeokeKhQjNcCPQRLEcIho=.sha256'
+sbot plugins.install ssb-npm-registry --from 'http://localhost:8989/blobs/get/&2afFvk14JEObC047kYmBLioDgMfHe2Eg5/gndSjPQ1Q=.sha256'
 ```
 then install the ssb-npm command:
 ```
