@@ -65,24 +65,12 @@ experience with, if you're new. Follow the instructions on the main page at http
 
 If you'd rather not use Patchwork, follow the next section.
 
-### 2b. Install scuttlebot + plugins
+### 2b. Install scuttlebot
 
 The [scuttlebot](http://www.github.com/SSBC/scuttlebot) (or sbot) is an ssb server which will manage replicating data with other peers.
 
 Make sure you [get an invite code](https://github.com/ssbc/scuttlebot/wiki/Pub-Servers) from a pub to increase your ability to find other scuttlers.
 
-You'll also need to install some plugins for git-ssb to function. With `sbot
-server` running, run
-
-```
-sbot plugins.install ssb-private
-```
-and
-```
-sbot plugins.install ssb-links
-```
-
-and restart `sbot server`.
 
 ### 3. Install ssb-npm
 
