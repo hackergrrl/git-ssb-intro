@@ -65,24 +65,12 @@ experience with, if you're new. Follow the instructions on the main page at http
 
 If you'd rather not use Patchwork, follow the next section.
 
-### 2b. Install scuttlebot + plugins
+### 2b. Install scuttlebot
 
 The [scuttlebot](http://www.github.com/SSBC/scuttlebot) (or sbot) is an ssb server which will manage replicating data with other peers.
 
 Make sure you [get an invite code](https://github.com/ssbc/scuttlebot/wiki/Pub-Servers) from a pub to increase your ability to find other scuttlers.
 
-You'll also need to install some plugins for git-ssb to function. With `sbot
-server` running, run
-
-```
-sbot plugins.install ssb-private
-```
-and
-```
-sbot plugins.install ssb-links
-```
-
-and restart `sbot server`.
 
 ### 3. Install ssb-npm
 
@@ -92,12 +80,14 @@ network. To access them, we'll need to install [ssb-npm](http://git.scuttlebot.i
 First, install the ssb-npm-registry plugin:
 
 ```
-sbot plugins.install ssb-npm-registry --from 'http://localhost:8989/blobs/get/&mQWE3Ziulf3hJ4ncGRnqQeDeokeKhQjNcCPQRLEcIho=.sha256'
+sbot plugins.install ssb-npm-registry --from 'http://localhost:8989/blobs/get/&2afFvk14JEObC047kYmBLioDgMfHe2Eg5/gndSjPQ1Q=.sha256'
 ```
 then install the ssb-npm command:
 ```
 npm install --registry=http://localhost:8043/ -g ssb-npm
 ```
+If you have problems with the above commands you may need to follow different people, so 
+that you can find all the dependencies. [cel](http://git.scuttlebot.io/%40f%2F6sQ6d2CMxRUhLpspgGIulDxDCwYD7DzFzPNr7u5AU%3D.ed25519) is a good bet. 
 
 ### 4. Install git-ssb
 
