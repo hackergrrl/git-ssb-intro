@@ -82,6 +82,10 @@ First, install the ssb-npm-registry plugin:
 ```
 sbot plugins.install ssb-npm-registry --from 'http://localhost:8989/blobs/get/&2afFvk14JEObC047kYmBLioDgMfHe2Eg5/gndSjPQ1Q=.sha256'
 ```
+If this doesn't work (or you aren't following enough people) you can fetch the blob from a centralized source too:
+```
+sbot plugins.install ssb-npm-registry --from 'http://viewer.scuttlebot.io/&2afFvk14JEObC047kYmBLioDgMfHe2Eg5/gndSjPQ1Q=.sha256'
+```
 then install the ssb-npm command:
 ```
 npm install --registry=http://localhost:8043/ -g ssb-npm
