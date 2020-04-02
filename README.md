@@ -11,7 +11,7 @@ aide for GitHub users into the world of git-ssb. It assumes rudimentary
 knowledge of GitHub. It will walk through:
 
 1. understanding what "SSB" is.
-2. installing scuttlebot -- the SSB peer server -- and joining the network.
+2. installing ssb-server -- the SSB peer server -- and joining the network.
 3. installing the `git-ssb` command and the `git-ssb-web` web interface.
 4. a walkthrough of using git-ssb to do common GitHub workflows (creating repos,
    making pull requests, merging pull requests, issues, etc).
@@ -22,7 +22,7 @@ _A view of recent activity among my friends on git-ssb_
 
 ## What is SSB?
 
-SSB stands for [secure scuttlebutt](https://github.com/ssbc/secure-scuttlebutt),
+SSB stands for [secure scuttlebutt](https://scuttlebutt.nz),
 the database/protocol that powers the *peer-to-peer log store* [scuttlebutt](http://scuttlebot.io). There is a great deal of information to be found by reading these sites, if you're so inclined.
 
 If you're familiar with bitcoin or blockchains, SSB is akin to having your
@@ -36,7 +36,7 @@ is then also signed by your public key, making it both tamper-proof, and
 appendable only by the private key holder (you).
 
 The final piece of SSB that makes it all work is the gossip protocol: when you
-run scuttlebot, you become a peer in a network of other scuttlebot users. You
+run scuttlebutt, you become a peer in a network of other scuttlebutt users. You
 can choose to 'follow' other people's personal logs. As a result, whenever you
 see that user (or any user that follows that user too) online, you can retrieve
 their latest log entries from them. All without any central server or central
@@ -65,9 +65,9 @@ experience with, if you're new. Follow the instructions on the main page at http
 
 If you'd rather not use Patchwork, follow the next section.
 
-### 2b. Install scuttlebot
+### 2b. Install ssb-server
 
-The [scuttlebot](http://www.github.com/SSBC/scuttlebot) (or sbot) is an ssb server which will manage replicating data with other peers.
+The [ssb-server](http://www.github.com/SSBC/ssb-server) is a local secure scuttlebutt server which will manage replicating data with other peers.
 
 Make sure you [get an invite code](https://github.com/ssbc/scuttlebot/wiki/Pub-Servers) from a pub to increase your ability to find other scuttlers.
 
@@ -105,14 +105,14 @@ $ ssb-npm install --global git-ssb
 
 You can now run `git-ssb` (or `git ssb`) from the command line and get a feel for the sorts of things it can do.
 
-**NOTE** - You need to make sure you are running a scuttlebot server when executing git-ssb commands. You can run one standalone, but the simplest way is to just run Patchwork.
+**NOTE** - You need to make sure you are running `ssb-server` when executing git-ssb commands. You can run one standalone, but the simplest way is to just run Patchwork.
 
 
 ## The git-ssb web interface
 
 If you've already joined the SSB network successfully, you can take a look at
 what other hackers on SSB are working on! Run `git-ssb web` and point your web
-browser at the URL it outputs. (Remember you need to be running scuttlebot or Patchwork.)
+browser at the URL it outputs. (Remember you need to be running ssb-server or Patchwork.)
 
 ![git-ssb web repo](git_ssb_repo.png)
 
@@ -123,13 +123,13 @@ lets you see commit activity, view repositories, browse commit history, see
 issues and pull requests. All without a centralized authority.
 
 There are at least a few public git-ssb web servers run by the community, for
-browsing git-ssb content without running your own scuttlebot:
+browsing git-ssb content without running your own ssb-server:
 
 - https://git.scuttlebot.io
 
 ## Creating your first SSB git remote
 
-git-ssb makes scuttlebot act like a git remote. Navigate to an existing git
+git-ssb makes ssb-server act like a git remote. Navigate to an existing git
 repository of yours and run
 
 ```
@@ -153,7 +153,7 @@ $ git clone ssb://%DEvlJYD+zuudMyNWFBjiiNvZ8DbOyBYhCkE5EVtWSV0=.sha256 my-repo
 ```
 
 and you'll see that `~/projects/my-repo` now exists. git-ssb talked to your local
-scuttlebot server and pulled down the entire git repository.
+ssb-server server and pulled down the entire git repository.
 
 In fact, you can also view your handiwork by running `git-ssb web` and opening
 your browser: you'll see your brand new repo near the top of the activity list
