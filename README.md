@@ -56,21 +56,23 @@ You can install node and npm..
 1. from https://nodejs.org, or
 1. using [nvm](https://github.com/creationix/nvm)
 
-### 2a. Install Patchwork
+### 2. Install an SSB node
+Any SSB node should do; there are several implementations. Below we will focus on two of the most popular.
 
-![Patchwork](patchwork.jpg)
+Whichever you choose, make sure you [get an invite code](https://github.com/ssbc/scuttlebot/wiki/Pub-Servers) from a pub to increase your ability to find other scuttlers.
+
+#### Desktop GUI: Patchwork
 
 Patchwork is an easy and user-friendly client that's nice to start your SSB
 experience with, if you're new. Follow the instructions on the main page at https://scuttlebutt.nz
 
-If you'd rather not use Patchwork, follow the next section.
+If you're looking for a 'headless'/CLI node to provide SSB services, follow the next section.
 
-### 2b. Install ssb-server
+![Patchwork](patchwork.jpg)
+
+### Command-Line Interface:  ssb-server
 
 The [ssb-server](http://www.github.com/SSBC/ssb-server) is a local secure scuttlebutt server which will manage replicating data with other peers.
-
-Make sure you [get an invite code](https://github.com/ssbc/scuttlebot/wiki/Pub-Servers) from a pub to increase your ability to find other scuttlers.
-
 
 ### 3. Install ssb-npm
 
@@ -86,9 +88,9 @@ If this doesn't work (or you aren't following enough people) you can fetch the b
 ```
 sbot plugins.install npm-registry --from 'http://viewer.scuttlebot.io/&2afFvk14JEObC047kYmBLioDgMfHe2Eg5/gndSjPQ1Q=.sha256'
 ```
-then install the ssb-npm command:
+Restart SSB, then install the ssb-npm command:
 ```
-npm install --registry=http://localhost:8043/ -g ssb-npm
+npm install -g 'http://localhost:8989/blobs/get/&qcphVNO9k28QT0oASdyjH41XEySuTxX3STooEj+olEE=.sha256'
 ```
 If you have problems with the above commands you may need to follow different people, so 
 that you can find all the dependencies. [cel](http://git.scuttlebot.io/%40f%2F6sQ6d2CMxRUhLpspgGIulDxDCwYD7DzFzPNr7u5AU%3D.ed25519) is a good bet. 
@@ -100,12 +102,12 @@ that you can find all the dependencies. [cel](http://git.scuttlebot.io/%40f%2F6s
 Let's use `npm` to install `git-ssb` globally so we can use it in the command-line:
 
 ```
-$ ssb-npm install --global git-ssb
+ssb-npm install -g git-ssb --branch %xlfr8klBuPNiHSXQ5uq2HkrIWudCz9Zzs9jiBoJBz3s=.sha256
 ```
 
 You can now run `git-ssb` (or `git ssb`) from the command line and get a feel for the sorts of things it can do.
 
-**NOTE** - You need to make sure you are running `ssb-server` when executing git-ssb commands. You can run one standalone, but the simplest way is to just run Patchwork.
+**NOTE** - git-ssb needs an SSB node to work with. You must ensure Patchwork, `ssb-server`, or simiar is running when executing git-ssb commands.
 
 
 ## The git-ssb web interface
