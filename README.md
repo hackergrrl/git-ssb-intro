@@ -102,7 +102,7 @@ that you can find all the dependencies. [cel](http://git.scuttlebot.io/%40f%2F6s
 Let's use `npm` to install `git-ssb` globally so we can use it in the command-line:
 
 ```
-ssb-npm install -g git-ssb --branch %xlfr8klBuPNiHSXQ5uq2HkrIWudCz9Zzs9jiBoJBz3s=.sha256
+ssb-npm install -g git-ssb --branch %p0H9aCwnOiyFHvFU2o7lFURhOx8VqygW3cS4jlhb66s=.sha256
 ```
 
 You can now run `git-ssb` (or `git ssb`) from the command line and get a feel for the sorts of things it can do.
